@@ -39,6 +39,13 @@
     <link href="css/style.css" rel="stylesheet" />
 
     <style>
+      .slideshow-wrapper img {
+  width: 100%; /* Makes images responsive */
+  height: auto; /* Maintains aspect ratio */
+  max-height: 600px; /* Limits height to maintain design */
+  object-fit: cover; /* Ensures images cover the container */
+  border-radius: 10px; /* Round the corners for aesthetics */
+}
       .image-container {
         position: relative;
         overflow: hidden;
@@ -67,6 +74,38 @@
         max-height: 600px;
         border-radius: 5px;
       }
+
+      .intern-profile {
+        background: #f8f9fa;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin: 10px; /* Add margin for spacing between profiles */
+  transition: transform 0.3s; /* Add a hover effect */
+      }
+
+      .intern-profile img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-bottom: 15px;
+      }
+
+      .project-card {
+        background: white;
+        border-radius: 8px;
+        padding: 15px;
+        margin-top: 10px;
+        border-left: 4px solid #06bbcc;
+      }
+
+      .content-container {
+  max-width: 800px; /* Set a max-width for better readability */
+  margin: auto; /* Center the content container */
+  padding: 20px; /* Ensure there's padding around the content */
+}
 
       .fade {
         animation: fade 5s infinite;
@@ -167,7 +206,7 @@
         <div class="row justify-content-center">
           <div class="col-lg-10 text-center">
             <h1 class="display-3 text-white animated slideInDown">
-              Internships
+              Internships - Cohort 1 (6 months)
             </h1>
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb justify-content-center">
@@ -192,7 +231,7 @@
     <!-- Header End -->
 
     <!-- Content Start -->
-    <div class="container-xxl py-5">
+    <!-- <div class="container-xxl py-5">
       <div class="row justify-content-center align-items-center">
         <div class="col-lg-6">
           <div class="content-container p-4 bg-white">
@@ -219,9 +258,154 @@
               and a final presentation at the end of the six months.
             </p>
           </div>
-        </div>
+        </div> -->
 
-        <div class="col-lg-6">
+        <div class="container-xxl py-5">
+          <div class="container">
+              <div text-align: justify;>
+                <div style="text-align: justify;">
+                  <h1 class="mb-3 inline-heading">Internships</h1>
+                  <!-- <h2 class="mb-3">Meet Our First Cohort</h2> -->
+  
+                  The demand for well-trained data scientists will continue to grow. Unfortunately, undergraduate training in Kenya does not prepare students for specialisation in health data science. Graduates are not aware of the career opportunities in health data science, and those who do lack mentors to help them choose a specialisation. The Health Data Science Mentorship and Incubation Program seeks to bridge the gap by laying the foundation for a data science training pipeline using project-based learning. Interested participants undergo an intensive open recruitment exercise to recruit six highly competitive students to join the program for six months. The six interns undergo intensive training within the first one and a half months before being assigned to mini projects. We will track the interns' progress weekly through code review sessions and a final presentation at the end of the six months
+  
+              </div>
+  
+          </div>
+      </div>
+
+        <div class="container-xxl py-5">
+          <div class="text-center mb-5">
+            <h2 class="mb-3">Meet Our First Cohort</h2>
+            <p class="text-muted">Six talented individuals selected for our inaugural Health Data Science Program</p>
+          </div>
+          
+          <div class="row">
+            <!-- Intern 1 -->
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="intern-profile text-center">
+                <img src="/api/placeholder/200/200" alt="John Doe" />
+                <h4>John Doe</h4>
+                <p class="text-muted">BSc. Statistics, University of Nairobi</p>
+                <div class="project-card">
+                  <h5>Completed Courses</h5>
+                  <ul class="list-unstyled">
+                    <li>Advanced Python Programming</li>
+                    <li>Statistical Analysis in R</li>
+                    <li>Machine Learning Fundamentals</li>
+                  </ul>
+                  <h5>Project</h5>
+                  <p>Predictive Analysis of Malaria Transmission Patterns</p>
+                </div>
+              </div>
+            </div>
+    
+            <!-- Intern 2 -->
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="intern-profile text-center">
+                <img src="/api/placeholder/200/200" alt="Jane Smith" />
+                <h4>Jane Smith</h4>
+                <p class="text-muted">BSc. Computer Science, JKUAT</p>
+                <div class="project-card">
+                  <h5>Completed Courses</h5>
+                  <ul class="list-unstyled">
+                    <li>Data Visualization</li>
+                    <li>Deep Learning Applications</li>
+                    <li>Biostatistics</li>
+                  </ul>
+                  <h5>Project</h5>
+                  <p>AI-Driven Disease Surveillance System</p>
+                </div>
+              </div>
+            </div>
+    
+            <!-- Intern 3 -->
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="intern-profile text-center">
+                <img src="/api/placeholder/200/200" alt="Michael Johnson" />
+                <h4>Michael Johnson</h4>
+                <p class="text-muted">BSc. Mathematics, Kenyatta University</p>
+                <div class="project-card">
+                  <h5>Completed Courses</h5>
+                  <ul class="list-unstyled">
+                    <li>Time Series Analysis</li>
+                    <li>Health Data Analytics</li>
+                    <li>Research Methods</li>
+                  </ul>
+                  <h5>Project</h5>
+                  <p>Epidemiological Modeling of Vector-Borne Diseases</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="intern-profile text-center">
+                <img src="/api/placeholder/200/200" alt="Sarah Wilson" />
+                <h4>Sarah Wilson</h4>
+                <p class="text-muted">BSc. Bioinformatics, Strathmore University</p>
+                <div class="project-card">
+                  <h5>Completed Courses</h5>
+                  <ul class="list-unstyled">
+                    <li>Genomic Data Analysis</li>
+                    <li>Cloud Computing</li>
+                    <li>Data Ethics</li>
+                  </ul>
+                  <h5>Project</h5>
+                  <p>Gene Expression Analysis in Disease Vectors</p>
+                </div>
+              </div>
+            </div>
+    
+            <!-- Intern 5 -->
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="intern-profile text-center">
+                <img src="/api/placeholder/200/200" alt="David Kamau" />
+                <h4>David Kamau</h4>
+                <p class="text-muted">BSc. Applied Statistics, Maseno University</p>
+                <div class="project-card">
+                  <h5>Completed Courses</h5>
+                  <ul class="list-unstyled">
+                    <li>Big Data Analytics</li>
+                    <li>Spatial Statistics</li>
+                    <li>Database Management</li>
+                  </ul>
+                  <h5>Project</h5>
+                  <p>Geospatial Analysis of Disease Patterns</p>
+                </div>
+              </div>
+            </div>
+    
+            <!-- Intern 6 -->
+            <div class="col-lg-4 col-md-6 mb-4">
+              <div class="intern-profile text-center">
+                <img src="/api/placeholder/200/200" alt="Lucy Njeri" />
+                <h4>Lucy Njeri</h4>
+                <p class="text-muted">BSc. Data Science, Moi University</p>
+                <div class="project-card">
+                  <h5>Completed Courses</h5>
+                  <ul class="list-unstyled">
+                    <li>Natural Language Processing</li>
+                    <li>Scientific Computing</li>
+                    <li>Data Visualization</li>
+                  </ul>
+                  <h5>Project</h5>
+                  <p>ML-Based Health Outcomes Prediction System</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+    
+
+        <div class="container-xxl py-5">
+          <div class="text-center mb-5">
+            <h2 class="mb-3">Meet Our First Cohort</h2>
+            <p class="text-muted">Six talented individuals selected for our inaugural Health Data Science Program</p>
+          </div>
+          
+
+        <!-- <div class="col-lg-6">
           <div class="image-container p-5 bg-white text-center">
             <div class="slideshow-wrapper">
               <div class="fade mySlides">
@@ -256,7 +440,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <!-- Content End -->
 
     <!-- Footer Start -->
