@@ -46,6 +46,41 @@
   object-fit: cover; /* Ensures images cover the container */
   border-radius: 10px; /* Round the corners for aesthetics */
 }
+
+.container-xxl{
+  padding: 2rem 0;
+}
+
+.interns-grid {
+  display: flex;
+  gap: 3rem; /* Increased gap between columns */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem; /* Added padding around the entire grid */
+}
+
+.column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem; /* Increased gap between cards in each column */
+}
+
+.intern-profile {
+  background: #ffffff;
+  border-radius: 12px; /* Slightly larger border radius */
+  padding: 2rem; /* Increased internal padding */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+  height: 600px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin: 0.5rem 0; /* Added vertical margin */
+}
+
+
       .image-container {
         position: relative;
         overflow: hidden;
@@ -54,11 +89,51 @@
         justify-content: flex-end;
       }
 
+      .intern-profile:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      }
+      .intern-profile img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        .intern-profile h4 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+        .intern-profile p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .project-card h5 {
+            font-size: 1rem;
+            color: #06bbcc;
+            margin-bottom: 0.5rem;
+        }
+        .project-card ul {
+            padding-left: 1.2rem;
+            list-style-type: disc;
+        }
+
       .slideshow-wrapper {
         position: relative;
         width: 100%;
         height: 100%;
       }
+
+      @media (min-width: 768px) {
+            .intern-profile img {
+                width: 180px;
+                height: 180px;
+            }
+        }
 
       .mySlides {
         display: none;
@@ -66,6 +141,14 @@
         width: 100%;
         height: 100%;
       }
+
+      .slideshow-wrapper img {
+  width: 100%;
+  height: auto;
+  max-height: 600px;
+  object-fit: cover;
+  border-radius: 10px;
+}
 
       .mySlides img {
         width: 100%;
@@ -76,6 +159,9 @@
       }
 
       .intern-profile {
+        flex: 1 1 calc(50% - 40px);
+        max-width: 600px;
+        min-height: 450px;
         background: #f8f9fa;
         border-radius: 10px;
         padding: 20px;
@@ -85,21 +171,111 @@
   transition: transform 0.3s; /* Add a hover effect */
       }
 
-      .intern-profile img {
-        width: 200px;
-        height: 200px;
-        object-fit: cover;
-        border-radius: 50%;
-        margin-bottom: 15px;
-      }
+      .profile-image {
+  height: 180px;
+  width: 180px;
+  margin: 0 auto 1.5rem; /* Increased bottom margin */
+  position: relative;
+}
 
-      .project-card {
-        background: white;
-        border-radius: 8px;
-        padding: 15px;
-        margin-top: 10px;
-        border-left: 4px solid #06bbcc;
-      }
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #f8f9fa; /* Added subtle border */
+}
+
+.profile-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  padding: 0 1rem; /* Added horizontal padding */
+}
+
+.profile-content::-webkit-scrollbar {
+  width: 4px;
+}
+
+.profile-content::-webkit-scrollbar-thumb {
+  background-color: #ffffff;
+  border-radius: 4px;
+}
+
+.project-card ul{
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+
+.project-card li {
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+.project-card {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem; /* Increased padding */
+  margin-top: 1.5rem; /* Increased top margin */
+  border-left: 4px solid #06bbcc;
+}
+
+
+.project-card h5 {
+  color: #06bbcc;
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem; /* Slightly larger heading */
+}
+
+.project-card ul {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.project-card li {
+  margin-bottom: 0.75rem; /* Increased spacing between list items */
+  line-height: 1.4;
+}
+
+h4 {
+  margin: 1.25rem 0 0.75rem;
+  color: #333;
+  font-size: 1.3rem; /* Slightly larger name */
+}
+
+.text-muted {
+  color: #6c757d;
+  margin-bottom: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  .interns-grid {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 2rem; /* Slightly reduced gap on mobile */
+  }
+  
+  .column {
+    width: 100%;
+    gap: 2rem;
+  }
+  
+  .intern-profile {
+    height: 550px;
+    padding: 1.5rem;
+    margin: 0.25rem 0;
+  }
+}
+
+      /* .flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Add space between cards */
+ */
 
       .content-container {
   max-width: 800px; /* Set a max-width for better readability */
@@ -206,7 +382,7 @@
         <div class="row justify-content-center">
           <div class="col-lg-10 text-center">
             <h1 class="display-3 text-white animated slideInDown">
-              Internships - Cohort 1 (6 months)
+              Internships 
             </h1>
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb justify-content-center">
@@ -274,96 +450,103 @@
           </div>
       </div>
 
-        <div class="container-xxl py-5">
-          <div class="text-center mb-5">
-            <h2 class="mb-3">Meet Our First Cohort</h2>
-            <p class="text-muted">Six talented individuals selected for our inaugural Health Data Science Program</p>
-          </div>
-          
-          <div class="row">
+      <div class="container-xxl py-5">
+        <div class="text-center mb-5">
+          <h2 class="mb-3">Meet Our First Cohort</h2>
+          <p class="text-muted">Six talented individuals selected for our inaugural Health Data Science Program</p>
+        </div>
+        
+        <div class="interns-grid">
+          <!-- Column 1 -->
+          <div class="column">
             <!-- Intern 1 -->
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="intern-profile text-center">
-                <img src="img/SAfari Penina.jpg" alt="Safari Pennina" />
+            <div class="intern-profile text-center">
+              <div class="profile-image">
+                <img src="img/SAfari Penina.jpg" alt="safari pennina" />
+              </div>
+              <div class="profile-content">
                 <h4>Penina Jumwa Safari</h4>
                 <p class="text-muted">BSc. Science in Mathematics, JKUAT</p>
                 <div class="project-card">
-
                   <h5>First Training:</h5>
                   <p>Open data in health in Kenya, what is available?</p>     
                   
                   <h5>Second Training:</h5>
                   <p>Risk factors for hypertension among pregnant women in Kenya.</p>   
-
+      
                   <h5>DMMG projects done:</h5>
                   <ul class="list-unstyled">
                     <li>Visceral leishmaniasis(with Dr Kennedy)</li>
                     <li>Dengue project( with Dr David Tchouassi) </li>
                     <li>Malaria resistance prediction(with Dr Komi)</li>
                   </ul>
-                  
                 </div>
               </div>
             </div>
-    
+      
             <!-- Intern 2 -->
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="intern-profile text-center">
-                <img src="/api/placeholder/200/200" alt="Jane Smith" />
-                <h4>Jane Smith</h4>
-                <p class="text-muted">BSc. Computer Science, JKUAT</p>
+            <div class="intern-profile text-center">
+              <div class="profile-image">
+                <img src="img/Purity Njenga.jpg" alt="purity njenga" />
+              </div>
+              <div class="profile-content">
+                <h4>Purity Wanjiku Njenga</h4>
+                <p class="text-muted">BSc. Medical Biotechnology, JKUAT</p>
                 <div class="project-card">
-                  <h5>Completed Courses</h5>
+                  <h5>projects</h5>
                   <ul class="list-unstyled">
-                    <li>Data Visualization</li>
-                    <li>Deep Learning Applications</li>
-                    <li>Biostatistics</li>
+                    <li>Biological age prediction on healthy adults in Sub-Saharan-Africa</li>
+                    <li>Impact of group-based interventions on systolic blood pressure reduction</li>
+                    <li>Wildlife role in the transmission of trypanosomiasis in livestock in Shimba Hills National Reserve</li>
                   </ul>
-                  <h5>Project</h5>
-                  <p>AI-Driven Disease Surveillance System</p>
                 </div>
               </div>
             </div>
-    
+          </div>
+      
+          <!-- Column 2 -->
+          <div class="column">
             <!-- Intern 3 -->
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="intern-profile text-center">
-                <img src="/api/placeholder/200/200" alt="Michael Johnson" />
-                <h4>Michael Johnson</h4>
-                <p class="text-muted">BSc. Mathematics, Kenyatta University</p>
+            <div class="intern-profile text-center">
+              <div class="profile-image">
+                <img src="img/Barrington Gesimba.jpg" alt="barrington gesimba" />
+              </div>
+              <div class="profile-content">
+                <h4>Barrington Gesimba</h4>
+                <p class="text-muted">Applied Computer Science</p>
                 <div class="project-card">
-                  <h5>Completed Courses</h5>
+                  <h5>Projects</h5>
                   <ul class="list-unstyled">
-                    <li>Time Series Analysis</li>
-                    <li>Health Data Analytics</li>
-                    <li>Research Methods</li>
+                    <li>Visceral Leishmaniasis</li>
+                    <li>Predicting  Mortality among persons living with HIV in western kenya using machine learning</li>
                   </ul>
-                  <h5>Project</h5>
-                  <p>Epidemiological Modeling of Vector-Borne Diseases</p>
                 </div>
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 mb-4">
-              <div class="intern-profile text-center">
-                <img src="/api/placeholder/200/200" alt="Sarah Wilson" />
-                <h4>Sarah Wilson</h4>
-                <p class="text-muted">BSc. Bioinformatics, Strathmore University</p>
-                <div class="project-card">
-                  <h5>Completed Courses</h5>
-                  <ul class="list-unstyled">
-                    <li>Genomic Data Analysis</li>
-                    <li>Cloud Computing</li>
-                    <li>Data Ethics</li>
-                  </ul>
-                  <h5>Project</h5>
-                  <p>Gene Expression Analysis in Disease Vectors</p>
-                </div>
-              </div>
-            </div>
+             <!-- Intern 4 -->
+      <div class="intern-profile text-center">
+        <div class="profile-image">
+          <img src="img/Esther Photo.jpg" alt="esther njuguna" />
+        </div>
+        <div class="profile-content">
+          <h4>Esther Njuguna</h4>
+          <p class="text-muted">BSc. Clinical Medicine and community Health</p>
+          <div class="project-card">
+            <h5>Projects</h5>
+            <ul class="list-unstyled">
+              <li>Impact Of Preprocessing On Machine Learning In Diabetes Datasets</li>
+              <li>Predicting stroke risk using machine learning</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
     
             <!-- Intern 5 -->
-            <div class="col-lg-4 col-md-6 mb-4">
+            <!-- <div class="col-lg-4 col-md-6 mb-4">
               <div class="intern-profile text-center">
                 <img src="/api/placeholder/200/200" alt="David Kamau" />
                 <h4>David Kamau</h4>
@@ -380,9 +563,9 @@
                 </div>
               </div>
             </div>
-    
+     -->
             <!-- Intern 6 -->
-            <div class="col-lg-4 col-md-6 mb-4">
+            <!-- <div class="col-lg-4 col-md-6 mb-4">
               <div class="intern-profile text-center">
                 <img src="/api/placeholder/200/200" alt="Lucy Njeri" />
                 <h4>Lucy Njeri</h4>
@@ -395,7 +578,7 @@
                     <li>Data Visualization</li>
                   </ul>
                   <h5>Project</h5>
-                  <p>ML-Based Health Outcomes Prediction System</p>
+                  <p>ML-Based Health Outcomes Prediction System</p> -->
                 </div>
               </div>
             </div>
@@ -404,7 +587,7 @@
     
     
 
-        <div class="container-xxl py-5">
+        <!-- <div class="container-xxl py-5"> -->
           <div class="text-center mb-5">
             <h2 class="mb-3">Meet Our First Cohort</h2>
             <p class="text-muted">Six talented individuals selected for our inaugural Health Data Science Program</p>
@@ -451,7 +634,7 @@
 
     <!-- Footer Start -->
     <div
-      class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn"
+      class=" bg-dark text-light footer pt-5 mt-5 wow fadeIn"
       data-wow-delay="0.1s"
     >
       <div class="container py-5">
