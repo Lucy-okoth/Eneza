@@ -14,6 +14,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
       href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
@@ -39,90 +43,98 @@
     <link href="css/style.css" rel="stylesheet" />
   </head>
   <style>
-    /* Card and Image Styles */
+    * {
+      font-family: "Montserrat", sans-serif;
+      line-height: 2rem;
+    }
+    .carousel-inner .carousel-item {
+      transition: transform 0.6s ease-in-out;
+    }
+
     .card {
       border-radius: 8px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      height: 400px;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .card-img-top {
-      width: 100%;
-      height: 600px;
-      object-fit: cover;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .card-img-top:hover {
-      /* transform: scale(1.05); */
-      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    /* Image container */
-    .img-container {
+      margin: 0 auto;
+      height: 100%;
       position: relative;
       overflow: hidden;
     }
 
-    /* img.img-fluid {
-  width: 100%;
-  height: 600px; 
-  object-fit: cover; 
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-} */
-
-    /* Hover effect */
-    /* img.img-fluid:hover {
-  transform: scale(1.05); 
-  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
-} */
-
-    /* Overlay text styling */
-    .img-container .overlay {
-      position: absolute;
-      bottom: 10%; /* Position overlay above the bottom */
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: rgba(
-        33,
-        82,
-        138,
-        0.6
-      ); /* Dark translucent background */
-      opacity: 0;
-      transition: opacity 0.5s ease;
-      padding: 5px 10px; /* Add some padding */
-      border-radius: 4px; /* Rounded corners for the overlay */
+    .card-img-top {
+      height: 300px;
+      object-fit: cover;
+      border-radius: 8px 8px 0 0;
+      transition: transform 0.3s ease;
     }
 
-    .img-container:hover .overlay {
+    .date-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: white;
+      padding: 8px 16px;
+      border-radius: 4px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 2;
+    }
+
+    .image-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0);
+      transition: background-color 0.3s ease;
+    }
+
+    .card:hover .image-overlay {
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .card:hover .date-overlay {
       opacity: 1;
     }
 
-    /* Overlay Text */
-    .overlay-text {
-      color: white;
-      font-size: 1.1rem;
-      text-align: center;
-      padding: 10px;
-      font-weight: 500;
+    .card:hover .card-img-top {
+      transform: scale(1.05);
     }
 
-    /* Owl Carousel Custom Styles */
-    .owl-carousel .owl-item {
-      opacity: 0; /* Initially hidden */
-      transition: opacity 0.5s ease, transform 0.5s ease;
+    @media (max-width: 768px) {
+      .card-img-top {
+        height: 200px;
+      }
     }
 
-    .owl-carousel .owl-item.prev,
-    .owl-carousel .owl-item.next {
-      filter: blur(3px);
-      opacity: 0.7;
-      transform: scale(0.95);
+    .carousel-control-prev,
+    .carousel-control-next {
+      width: 5%;
+
+      background-color: rgba(0, 0, 0, 0.2);
+      border-radius: 50%;
+      height: 50px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    @media (max-width: 768px) {
+      .d-md-block {
+        display: none !important;
+      }
+
+      .card-img-top {
+        height: 200px;
+      }
+    }
+
+    .carousel-indicators {
+      bottom: -50px;
+    }
+
+    .carousel-indicators button {
+      background-color: #666;
     }
   </style>
   <body>
@@ -280,52 +292,322 @@
         </p>
       </div>
     </div>
-    <div class="container my-5">
-      <div class="row">
-        <div class="col-lg-4 mb-4">
-          <div class="card">
-            <img
-              src="img/WORKSHOP PHOTOS/Reseacher4_workshop.jpeg"
-              class="card-img-top img-fluid"
-              alt="Researchers at ICIPE"
-            />
-            <div class="card-body">
-              <p class="card-text">
-                Group photo of researchers outside the ICIPE building
-              </p>
-            </div>
-          </div>
-        </div>
+    <div id="workshopCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+          <button type="button" data-bs-target="#workshopCarousel" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#workshopCarousel" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#workshopCarousel" data-bs-slide-to="2"></button>
+      </div>
 
-        <div class="col-lg-4 mb-4">
-          <div class="card">
-            <img
-              src="img/WORKSHOP PHOTOS/Reseachers3_workshop.JPG"
-              class="card-img-top img-fluid"
-              alt="Workshop Sessions"
-            />
-            <div class="card-body">
-              <p class="card-text">
-                Hands-on workshop session at ICIPE Duduville Campus
-              </p>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="col-12 col-md-4">
+                <div class="card">
+                  <div class="image-overlay"></div>
+                                <div class="date-overlay">
+                                    <span style="font-weight: 500;">August 12, 2024</span>
+                                </div>
+                  <img
+                    src="img/WORKSHOP PHOTOS/Reseacher01_workshop.JPG"
+                    class="card-img-top"
+                    alt="Researchers at ICIPE"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">
+                      Group photo of researchers outside the ICIPE building
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-4 d-none d-md-block">
+                <div class="card">
+                  <div class="image-overlay"></div>
+                                <div class="date-overlay">
+                                    <span style="font-weight: 500;">August 12, 2024</span>
+                                </div>
+                  <img
+                    src="img/WORKSHOP PHOTOS/Reseachers02_workshop.JPG"
+                    class="card-img-top"
+                    alt="Workshop Sessions"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">
+                      Hands-on workshop session at ICIPE Duduville Campus
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-4 d-none d-md-block">
+                <div class="card">
+                  <img
+                    src="img/WORKSHOP PHOTOS/Reseachers2_workshop.JPG"
+                    class="card-img-top"
+                    alt="Clinicians and researchers"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">
+                      Clinicians and researchers collaborating on data science
+                      tools
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div class="col-lg-4 mb-4">
-          <div class="card">
-            <img
-              src="img/WORKSHOP PHOTOS/Reseachers7_workshop.JPG"
-              class="card-img-top img-fluid"
-              alt="Clinicians and researchers"
-            />
-            <div class="card-body">
-              <p class="card-text">
-                Clinicians and researchers collaborating on data science tools
-              </p>
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-12 col-md-4">
+                <div class="card">
+                  <div class="image-overlay"></div>
+                                <div class="date-overlay">
+                                    <span style="font-weight: 500;">August 12, 2024</span>
+                                </div>
+                  <img
+                    src="img/WORKSHOP PHOTOS/Reseachers2_workshop.JPG"
+                    class="card-img-top"
+                    alt="Workshop Sessions"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">
+                      Hands-on workshop session at ICIPE Duduville Campus
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-4 d-none d-md-block">
+                <div class="card">
+                  <div class="image-overlay"></div>
+                                <div class="date-overlay">
+                                    <span style="font-weight: 500;">August 12, 2024</span>
+                                </div>
+                  <img
+                    src="img/WORKSHOP PHOTOS/Reseachers3_workshop.JPG"
+                    class="card-img-top"
+                    alt="Clinicians and researchers"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">
+                      Clinicians and researchers collaborating on data science
+                      tools
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-4 d-none d-md-block">
+                <div class="card">
+                  <div class="image-overlay"></div>
+                                <div class="date-overlay">
+                                    <span style="font-weight: 500;">August 12, 2024</span>
+                                </div>
+                  <img
+                    src="img/WORKSHOP PHOTOS/Reseacher4_workshop.jpeg"
+                    class="card-img-top"
+                    alt="Researchers at ICIPE"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">
+                      Group photo of researchers outside the ICIPE building
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-12 col-md-4">
+                <div class="card">
+                  <div class="image-overlay"></div>
+                                <div class="date-overlay">
+                                    <span style="font-weight: 500;">August 12, 2024</span>
+                                </div>
+                  <img
+                    src="img/WORKSHOP PHOTOS/Reseacher4_workshop.jpeg"
+                    class="card-img-top"
+                    alt="Workshop Sessions"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">
+                      Hands-on workshop session at ICIPE Duduville Campus
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12 col-md-4 d-none d-md-block">
+                <div class="card">
+                  <div class="image-overlay"></div>
+                                <div class="date-overlay">
+                                    <span style="font-weight: 500;">August 12, 2024</span>
+                                </div>
+                  <img
+                    src="img/WORKSHOP PHOTOS/Reseachers5_workshop.JPG"
+                    class="card-img-top"
+                    alt="Clinicians and researchers"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">
+                      Clinicians and researchers collaborating on data science
+                      tools
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-4 d-none d-md-block">
+                <div class="card">
+                  <div class="image-overlay"></div>
+                                <div class="date-overlay">
+                                    <span style="font-weight: 500;">August 12, 2024</span>
+                                </div>
+                  <img
+                    src="img/WORKSHOP PHOTOS/Reseachers6_workshop.JPG"
+                    class="card-img-top"
+                    alt="Researchers at ICIPE"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">Kelvin</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-12 col-md-4">
+                <div class="card">
+                  <div class="image-overlay"></div>
+                                <div class="date-overlay">
+                                    <span style="font-weight: 500;">August 12, 2024</span>
+                                </div>
+                  <img
+                    src="img/WORKSHOP PHOTOS/Reseachers6_workshop.JPG"
+                    class="card-img-top"
+                    alt="Clinicians and researchers"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">
+                      Clinicians and researchers collaborating on data science
+                      tools
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-4 d-none d-md-block">
+                <div class="card">
+                  <div class="image-overlay"></div>
+                                <div class="date-overlay">
+                                    <span style="font-weight: 500;">August 12, 2024</span>
+                                </div>
+                  <img
+                    src="img/WORKSHOP PHOTOS/Reseachers7_workshop.JPG"
+                    class="card-img-top"
+                    alt="Researchers at ICIPE"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">
+                      Group photo of researchers outside the ICIPE building
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-4 d-none d-md-block">
+                <div class="card">
+                  <div class="image-overlay"></div>
+                                <div class="date-overlay">
+                                    <span style="font-weight: 500;">August 12, 2024</span>
+                                </div>
+                  <img
+                    src="img/WORKSHOP PHOTOS/Reseachers8_workshop.JPG"
+                    class="card-img-top"
+                    alt="Workshop Sessions"
+                  />
+                  <div class="card-body">
+                    <p class="card-text">
+                      Hands-on workshop session at ICIPE Duduville Campus
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+        <div class="carousel-item">
+          <div class="row">
+            <div class="col-12 col-md-4">
+              <div class="card">
+                <div class="image-overlay"></div>
+                                <div class="date-overlay">
+                                    <span style="font-weight: 500;">August 12, 2024</span>
+                                </div>
+                <img
+                  src="img/WORKSHOP PHOTOS/Reseachers8_workshop.JPG"
+                  class="card-img-top"
+                  alt="Workshop Sessions"
+                />
+                <div class="card-body">
+                  <p class="card-text">
+                    Hands-on workshop session at ICIPE Duduville Campus
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-4 d-none d-md-block">
+              <div class="card">
+                <div class="image-overlay"></div>
+                                <div class="date-overlay">
+                                    <span style="font-weight: 500;">August 12, 2024</span>
+                                </div>
+                <img
+                  src="img/WORKSHOP PHOTOS/Reseachers9_workshop.JPG"
+                  class="card-img-top"
+                  alt="Clinicians and researchers"
+                />
+                <div class="card-body">
+                  <p class="card-text">
+                    Clinicians and researchers collaborating on data science
+                    tools
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-4 d-none d-md-block">
+              <div class="card">
+                
+                <img
+                  src="img/WORKSHOP PHOTOS/Reseacher_workshop.JPG"
+                  class="card-img-top"
+                  alt="Researchers at ICIPE"
+                />
+                <div class="card-body">
+                  <p class="card-text">
+                    Group photo of researchers outside the ICIPE building
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#workshopCarousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#workshopCarousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
     </div>
 

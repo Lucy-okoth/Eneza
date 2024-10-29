@@ -14,6 +14,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
       href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
@@ -40,6 +44,10 @@
 
     <!-- Custom Image Slider Styles -->
     <style>
+      * {
+        font-family: "Montserrat", sans-serif;
+        line-height: 1.8rem;
+      }
       .slider-container {
         max-width: 1300px;
         margin: 2rem auto;
@@ -58,7 +66,7 @@
         scroll-snap-type: x mandatory;
         gap: 1rem;
         padding: 1rem;
-        justify-content: space-between; /* Aligns items to the start and end */
+        justify-content: space-between;
       }
 
       .slider-card {
@@ -131,10 +139,24 @@
         max-width: 80%;
         line-height: 1.6;
         font-family: "Heebo", sans-serif;
+        margin-bottom: 1rem;
+      }
+
+      .slide-date {
+        color: white;
+        background-color: rgba(255, 255, 255, 0.2);
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        margin-top: 1rem;
+        transform: translateY(20px);
+        transition: transform 0.5s ease;
       }
 
       .slider-card:hover .slide-title,
-      .slider-card:hover .slide-description {
+      .slider-card:hover .slide-description,
+      .slider-card:hover .slide-date {
         transform: translateY(0);
       }
 
@@ -349,6 +371,7 @@
                   group of learners collaborated across borders, laying the
                   foundation for their data science journey.
                 </p>
+                <div class="slide-date">July 2 - July 13, 2024</div>
               </div>
             </div>
             <div class="slider-card">
@@ -365,6 +388,7 @@
                   challenges, working collaboratively to develop innovative
                   solutions.
                 </p>
+                <div class="slide-date">July 16 - August 2, 2024</div>
               </div>
             </div>
             <div class="slider-card">
@@ -381,6 +405,92 @@
                   participants, building lasting professional networks across
                   East Africa.
                 </p>
+                <div class="slide-date">July 26 - August 2, 2024</div>
+              </div>
+            </div>
+            <div class="slider-card">
+              <img
+                src="img/INTERNS_PHOTOS/IMG_9660.JPG"
+                alt="Advanced Technology Sessions"
+              />
+              <div class="slide-overlay">
+                <h3 class="slide-title">Advanced Technology Sessions</h3>
+                <p class="slide-description">
+                  The program culminated in advanced sessions on Blockchain
+                  technology and AI applications. These sessions fostered
+                  cross-cultural collaboration and knowledge exchange among
+                  participants, building lasting professional networks across
+                  East Africa.
+                </p>
+                <div class="slide-date">July 26 - August 2, 2024</div>
+              </div>
+            </div>
+            <div class="slider-card">
+              <img
+                src="img/INTERNS_PHOTOS/IMG_9659.JPG"
+                alt="Advanced Technology Sessions"
+              />
+              <div class="slide-overlay">
+                <h3 class="slide-title">Advanced Technology Sessions</h3>
+                <p class="slide-description">
+                  The program culminated in advanced sessions on Blockchain
+                  technology and AI applications. These sessions fostered
+                  cross-cultural collaboration and knowledge exchange among
+                  participants, building lasting professional networks across
+                  East Africa.
+                </p>
+                <div class="slide-date">July 26 - August 2, 2024</div>
+              </div>
+            </div>
+            <div class="slider-card">
+              <img
+                src="img/INTERNS_PHOTOS/IMG_9661.JPG"
+                alt="Advanced Technology Sessions"
+              />
+              <div class="slide-overlay">
+                <h3 class="slide-title">Advanced Technology Sessions</h3>
+                <p class="slide-description">
+                  The program culminated in advanced sessions on Blockchain
+                  technology and AI applications. These sessions fostered
+                  cross-cultural collaboration and knowledge exchange among
+                  participants, building lasting professional networks across
+                  East Africa.
+                </p>
+                <div class="slide-date">July 26 - August 2, 2024</div>
+              </div>
+            </div>
+            <div class="slider-card">
+              <img
+                src="img/INTERNS_PHOTOS/IMG_9680.JPG"
+                alt="Advanced Technology Sessions"
+              />
+              <div class="slide-overlay">
+                <h3 class="slide-title">Advanced Technology Sessions</h3>
+                <p class="slide-description">
+                  The program culminated in advanced sessions on Blockchain
+                  technology and AI applications. These sessions fostered
+                  cross-cultural collaboration and knowledge exchange among
+                  participants, building lasting professional networks across
+                  East Africa.
+                </p>
+                <div class="slide-date">July 26 - August 2, 2024</div>
+              </div>
+            </div>
+            <div class="slider-card">
+              <img
+                src="img/INTERNS_PHOTOS/IMG_9697.JPG"
+                alt="Advanced Technology Sessions"
+              />
+              <div class="slide-overlay">
+                <h3 class="slide-title">Advanced Technology Sessions</h3>
+                <p class="slide-description">
+                  The program culminated in advanced sessions on Blockchain
+                  technology and AI applications. These sessions fostered
+                  cross-cultural collaboration and knowledge exchange among
+                  participants, building lasting professional networks across
+                  East Africa.
+                </p>
+                <div class="slide-date">July 26 - August 2, 2024</div>
               </div>
             </div>
           </div>
@@ -465,20 +575,16 @@
       const sliderWrapper = document.getElementById("sliderWrapper");
 
       function slide(direction) {
-        const cardWidth = 316; // card width + gap
+        const cardWidth = 316;
         const scrollAmount = direction === "left" ? -cardWidth : cardWidth;
         const currentScroll = sliderWrapper.scrollLeft;
         const maxScroll = sliderWrapper.scrollWidth - sliderWrapper.clientWidth;
 
-        // Check if we can scroll in the desired direction
         if (direction === "left" && currentScroll <= 0) {
-          // At the beginning, scroll to the end
           sliderWrapper.scrollLeft = maxScroll;
         } else if (direction === "right" && currentScroll >= maxScroll) {
-          // At the end, scroll to the beginning
           sliderWrapper.scrollLeft = 0;
         } else {
-          // Normal scroll
           sliderWrapper.scrollBy({
             left: scrollAmount,
             behavior: "smooth",
@@ -486,15 +592,12 @@
         }
       }
 
-      // Optional: Auto-slide every 5 seconds
       let autoSlideInterval = setInterval(() => slide("right"), 5000);
 
-      // Pause auto-slide on hover
       sliderWrapper.addEventListener("mouseenter", () => {
         clearInterval(autoSlideInterval);
       });
 
-      // Resume auto-slide when mouse leaves
       sliderWrapper.addEventListener("mouseleave", () => {
         autoSlideInterval = setInterval(() => slide("right"), 5000);
       });

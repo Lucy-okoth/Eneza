@@ -13,6 +13,7 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link
       href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
       rel="stylesheet"
@@ -39,12 +40,33 @@
     <link href="css/style.css" rel="stylesheet" />
 
     <style>
+      * {
+        font-family: 'Montserrat', sans-serif;
+        line-height: 1.8rem;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+      }
+
+      .navbar-brand h2 {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 800;
+      }
+
+      /* Body text styling */
+      p, li, .text-muted {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
+      }
+
       .slideshow-wrapper img {
-  width: 100%; /* Makes images responsive */
-  height: auto; /* Maintains aspect ratio */
-  max-height: 600px; /* Limits height to maintain design */
-  object-fit: cover; /* Ensures images cover the container */
-  border-radius: 10px; /* Round the corners for aesthetics */
+  width: 100%; 
+  height: auto; 
+  max-height: 600px; 
+  object-fit: cover; 
+  border-radius: 10px; 
 }
 
 .container-xxl{
@@ -53,23 +75,23 @@
 
 .interns-grid {
   display: flex;
-  gap: 3rem; /* Increased gap between columns */
+  gap: 3rem; 
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem; /* Added padding around the entire grid */
+  padding: 2rem; 
 }
 
 .column {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 3rem; /* Increased gap between cards in each column */
+  gap: 3rem; 
 }
 
 .intern-profile {
   background: #ffffff;
-  border-radius: 12px; /* Slightly larger border radius */
-  padding: 2rem; /* Increased internal padding */
+  border-radius: 12px; 
+  padding: 2rem; 
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s, box-shadow 0.3s;
   height: 600px;
@@ -77,7 +99,7 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  margin: 0.5rem 0; /* Added vertical margin */
+  margin: 0.5rem 0; 
 }
 
 
@@ -204,7 +226,7 @@
 }
 
 .project-card ul{
-  list-style-type: none;
+  /* list-style-type: none; */
   padding-left: 0;
   margin: 0;
 }
@@ -453,7 +475,7 @@ h4 {
       <div class="container-xxl py-5">
         <div class="text-center mb-5">
           <h2 class="mb-3">Meet Our First Cohort</h2>
-          <p class="text-muted">Six talented individuals selected for our inaugural Health Data Science Program</p>
+          <p class="text-muted">Four talented individuals selected for our inaugural Health Data Science Program</p>
         </div>
         
         <div class="interns-grid">
@@ -468,13 +490,13 @@ h4 {
                 <h4>Penina Jumwa Safari</h4>
                 <p class="text-muted">BSc. Science in Mathematics, JKUAT</p>
                 <div class="project-card">
-                  <h5>First Training:</h5>
+                  <!-- <h5>First Training:</h5>
                   <p>Open data in health in Kenya, what is available?</p>     
                   
                   <h5>Second Training:</h5>
-                  <p>Risk factors for hypertension among pregnant women in Kenya.</p>   
+                  <p>Risk factors for hypertension among pregnant women in Kenya.</p>    -->
       
-                  <h5>DMMG projects done:</h5>
+                  <h5>Projects Done:</h5>
                   <ul class="list-unstyled">
                     <li>Visceral leishmaniasis(with Dr Kennedy)</li>
                     <li>Dengue project( with Dr David Tchouassi) </li>
@@ -493,7 +515,7 @@ h4 {
                 <h4>Purity Wanjiku Njenga</h4>
                 <p class="text-muted">BSc. Medical Biotechnology, JKUAT</p>
                 <div class="project-card">
-                  <h5>projects</h5>
+                  <h5>Projects Done:</h5>
                   <ul class="list-unstyled">
                     <li>Biological age prediction on healthy adults in Sub-Saharan-Africa</li>
                     <li>Impact of group-based interventions on systolic blood pressure reduction</li>
@@ -513,9 +535,9 @@ h4 {
               </div>
               <div class="profile-content">
                 <h4>Barrington Gesimba</h4>
-                <p class="text-muted">Applied Computer Science</p>
+                <p class="text-muted">BSc. Applied Computer Science, USIU</p>
                 <div class="project-card">
-                  <h5>Projects</h5>
+                  <h5>Projects Done:  </h5>
                   <ul class="list-unstyled">
                     <li>Visceral Leishmaniasis</li>
                     <li>Predicting  Mortality among persons living with HIV in western kenya using machine learning</li>
@@ -531,9 +553,9 @@ h4 {
         </div>
         <div class="profile-content">
           <h4>Esther Njuguna</h4>
-          <p class="text-muted">BSc. Clinical Medicine and community Health</p>
+          <p class="text-muted">BSc. Clinical Medicine and community Health, JKUAT          </p>
           <div class="project-card">
-            <h5>Projects</h5>
+            <h5>Projects Done:</h5>
             <ul class="list-unstyled">
               <li>Impact Of Preprocessing On Machine Learning In Diabetes Datasets</li>
               <li>Predicting stroke risk using machine learning</li>
@@ -588,9 +610,12 @@ h4 {
     
 
         <!-- <div class="container-xxl py-5"> -->
-          <div class="text-center mb-5">
-            <h2 class="mb-3">Meet Our First Cohort</h2>
-            <p class="text-muted">Six talented individuals selected for our inaugural Health Data Science Program</p>
+          <div class="mb-5 container">
+            <h2 class="text-center mb-3">Call for ENEZA Health Data Science Internship at ICIPE</h2>
+            <p class="text-muted text-right">Application Deadline– November 1, 2024 - 23:59Hrs (EAT)</p>
+            <p class="">The ENEZA Data Science Incubation and Mentorship program is an internship that targets recent graduates interested in data science for health. This program prepares recent graduates with knowledge and skills to support data science research in health and as potential candidates for the DSI-Training Program MSc programs, filling a critical gap always overlooked in recruitment. We note that the demand for well-trained data scientists in health research will continue to grow as the use of electronic data grows, including data from the DSI-Africa research hubs. Unfortunately, undergraduate training in Kenya does not prepare students for specialisation in health data science. Graduates are unaware of the career opportunities in health data science, and those who do lack mentors to help them choose a specialisation. The ENEZA Data Science Incubation and Mentorship Program seeks to bridge the gap by laying the foundation for a data science training pipeline using project-based learning.</p>
+
+            <a href="https://forms.gle/KfcPuhKMU8UnEUQJA" rel="noopener" class="btn btn-secondary" target="_blank">Apply Here</a>
           </div>
           
 
