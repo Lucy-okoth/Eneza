@@ -269,6 +269,7 @@
         class="navbar-toggler me-4"
         data-bs-toggle="collapse"
         data-bs-target="#navbarCollapse"
+        title="Toggle navigation"
       >
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -495,12 +496,14 @@
             </div>
           </div>
           <div class="slider-nav">
-            <button onclick="slide('left')" id="slideLeft">
-              <i class="fas fa-chevron-left"></i>
-            </button>
-            <button onclick="slide('right')" id="slideRight">
-              <i class="fas fa-chevron-right"></i>
-            </button>
+            <div class="slider-nav">
+              <button type="button" onclick="slide('left')" id="slideLeft">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button type="button" onclick="slide('right')" id="slideRight">
+                <i class="fas fa-chevron-right"></i>
+              </button>
+            </div>
           </div>
           <div class="slider-indicators" id="sliderIndicators"></div>
         </div>
