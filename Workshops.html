@@ -51,6 +51,39 @@
       transition: transform 0.6s ease-in-out;
     }
 
+    p {
+  letter-spacing: 0.02em;
+  line-height: 1.8;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+  font-weight: 400;
+  text-align: justify;
+}
+
+h1 {
+  letter-spacing: 0.03em;
+  color: #1a273b;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: #06BBCC;
+}
+
+.container{
+  padding: 2rem 1.5rem;
+}
+
     .card {
       border-radius: 8px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -108,6 +141,21 @@
       }
     }
 
+    @media (max-width: 768px) {
+  p {
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+
     .carousel-control-prev,
     .carousel-control-next {
       width: 5%;
@@ -118,6 +166,25 @@
       top: 50%;
       transform: translateY(-50%);
     }
+
+    .card-text {
+  font-size: 0.95rem;
+  color: #495057;
+  letter-spacing: 0.01em;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.container-xxl .container p {
+  margin-bottom: 2rem;
+  position: relative;
+  padding-left: 1rem;
+  border-left: 3px solid #06BBCC;
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
 
     @media (max-width: 768px) {
       .d-md-block {
@@ -202,6 +269,7 @@
                 >Residential Training</a
               >
               <a href="Internships.html" class="dropdown-item">Internships</a>
+              <a href="MoreInfo.html" class="dropdown-item">More Info</a>
             </div>
           </div>
 
@@ -232,12 +300,13 @@
       </div>
     </nav>
     <!-- Navbar End -->
+     
     <!-- Header Start -->
     <div class="container-fluid bg-primary py-5 mb-5 page-header">
       <div class="container py-5">
         <div class="row justify-content-center">
           <div class="col-lg-10 text-center">
-            <h1 class="display-3 text-white animated slideInDown">Workshops</h1>
+            <h2 class="display-3 text-white animated slideInDown">Workshops</h2>
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb justify-content-center">
                 <li class="breadcrumb-item">
@@ -260,9 +329,8 @@
     </div>
     <!-- Header End -->
     <!-- Team Start -->
-    <div class="container-xxl py-5">
       <div class="container">
-        <div text-align: justify;>
+        <div>
           <h1 class="mb-5">Workshops</h1>
 
           <p>
@@ -292,8 +360,7 @@
           (DSI-ODSP) in collaboration with the ODSP team.
         </p>
       </div>
-    </div>
-    <div id="workshopCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div id="workshopCarousel" class="container carousel slide" data-bs-ride="carousel">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#workshopCarousel" data-bs-slide-to="0" class="active" title="Go to slide 1"></button>
         <button type="button" data-bs-target="#workshopCarousel" data-bs-slide-to="1" title="Go to slide 2"></button>
